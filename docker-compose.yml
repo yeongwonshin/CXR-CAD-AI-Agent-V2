@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  # ── FastAPI 백엔드 ──────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cxr-cad-api
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./checkpoints:/app/checkpoints  # 학습된 모델 체크포인트
+      - ./data:/app/data                # NIH 데이터셋 마운트
+    environment:
+      - PYTHONPATH=/app
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # ── Streamlit 대시보드 ──────────────────────────
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cxr-cad-dashboard
+    command: streamlit run dashboard/app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+      - API_URL=http://api:8000  # 컨테이너 내부 통신
+    depends_on:
+      - api

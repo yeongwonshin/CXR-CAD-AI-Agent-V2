@@ -1,0 +1,13 @@
+Case,Image Index,예측,GT,확률,Threshold,Grad-CAM,원인
+FN-1,00008468_014.png,Below threshold,Emphysema,0.008,0.5202,확률 기반 FN 후보,"threshold 0.520보다 -0.512 낮음; View=AP, Age=10, Sex=F"
+FN-2,00008383_005.png,Below threshold,Emphysema,0.0135,0.5202,확률 기반 FN 후보,"threshold 0.520보다 -0.507 낮음; View=PA, Age=44, Sex=F"
+FN-3,00012648_003.png,Below threshold,Emphysema,0.0171,0.5202,확률 기반 FN 후보,"threshold 0.520보다 -0.503 낮음; View=AP, Age=37, Sex=M"
+FN-4,00012648_005.png,Below threshold,Emphysema,0.0211,0.5202,확률 기반 FN 후보,"threshold 0.520보다 -0.499 낮음; View=PA, Age=37, Sex=M"
+FN-5,00008468_013.png,Below threshold,Emphysema,0.0252,0.5202,확률 기반 FN 후보,"threshold 0.520보다 -0.495 낮음; View=AP, Age=10, Sex=F"
+FN-6,00029945_000.png,Below threshold,Atelectasis,0.0233,0.5154,확률 기반 FN 후보,"threshold 0.515보다 -0.492 낮음; View=PA, Age=19, Sex=F"
+FN-7,00012648_004.png,Below threshold,Emphysema,0.0292,0.5202,확률 기반 FN 후보,"threshold 0.520보다 -0.491 낮음; View=PA, Age=37, Sex=M"
+FN-8,00012648_006.png,Below threshold,Emphysema,0.03,0.5202,확률 기반 FN 후보,"threshold 0.520보다 -0.490 낮음; View=PA, Age=36, Sex=M"
+FN-9,00009117_000.png,Below threshold,Atelectasis,0.0341,0.5154,확률 기반 FN 후보,"threshold 0.515보다 -0.481 낮음; View=AP, Age=23, Sex=M"
+FN-10,00016370_000.png,Below threshold,Atelectasis,0.0349,0.5154,확률 기반 FN 후보,"threshold 0.515보다 -0.481 낮음; View=PA, Age=14, Sex=M"
+FN-11,00008077_000.png,Below threshold,Atelectasis,0.0376,0.5154,확률 기반 FN 후보,"threshold 0.515보다 -0.478 낮음; View=PA, Age=14, Sex=F"
+FN-12,00027359_008.png,Below threshold,Emphysema,0.0435,0.5202,확률 기반 FN 후보,"threshold 0.520보다 -0.477 낮음; View=AP, Age=18, Sex=F"

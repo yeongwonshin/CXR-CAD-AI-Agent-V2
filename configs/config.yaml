@@ -1,0 +1,88 @@
+# CXR-CAD 프로젝트 설정 파일
+#
+# 학습(Kaggle)과 평가 파이프라인에서 공통으로 참조하는 하이퍼파라미터.
+# configs/config.yaml을 수정하면 노트북·스크립트 코드 변경 없이 실험 재현 가능.
+#
+# ────────────────────────────────────────────────────────────────────────────
+# 경로 우선순위:
+#   1. 환경변수 (NIH_DIR, CHEXPERT_DIR, CHECKPOINT_DIR) — Kaggle 노트북에서 설정
+#   2. kaggle.nih_dir / kaggle.chexpert_dir            — Kaggle 기본 마운트 경로
+#   3. data.data_root                                   — 로컬 개발 경로
+# ────────────────────────────────────────────────────────────────────────────
+
+# ── 데이터 (로컬 개발 경로) ──────────────────────────────────────────────────
+data:
+  data_root: "data/nih" # NIH 루트 (images/, *.csv 포함)
+  image_dir: "data/nih/images" # NIH ChestX-ray14 이미지 폴더
+  metadata_csv: "data/nih/Data_Entry_2017.csv"
+  image_size: 224 # 모델 입력 크기 (px)
+  # val_ratio:    0.15                              # 5-Fold 교차 검증을 위해 val 제거
+  test_ratio: 0.15 # 환자 기준 Test 비율
+  seed: 42
+
+# ── Kaggle 마운트 경로 ────────────────────────────────────────────────────────
+# Kaggle Notebook 실행 시 아래 경로를 사용.
+# 실제 dataset slug에 맞게 nih_dir을 수정하세요.
+kaggle:
+  # NIH 224×224 pre-resized dataset slug 예시:
+  #   - nih-chest-xrays               (공식 원본, 1024px → transforms로 224 변환)
+  #   - nih-chest-xray-14-images-224  (224px 사전 리사이즈 버전, 있는 경우)
+  nih_dir: "/kaggle/input/datasets/organizations/nih-chest-xrays/data" # ← 실제 slug로 변경 필요
+  nih_csv: "Data_Entry_2017.csv" # CSV 파일명
+
+  # CheXpert: Stanford 라이선스 신청 후 Kaggle Private Dataset으로 업로드
+  # 업로드 slug 예시: chexpert-v1 (사용자가 지정한 이름)
+  chexpert_dir: "/kaggle/input/datasets/ashery/chexpert"
+
+  working_dir: "/kaggle/working" # 체크포인트 저장 위치
+
+# ── 전처리 ────────────────────────────────────────────────────────────────────
+preprocess:
+  clahe_clip_limit: 4.0
+  clahe_tile_grid: [8, 8]
+  imagenet_mean: [0.485, 0.456, 0.406]
+  imagenet_std: [0.229, 0.224, 0.225]
+
+# ── 학습 ─────────────────────────────────────────────────────────────────────
+train:
+  n_splits: 5 # 5-Fold Cross Validation 설정 추가
+  batch_size: 64 # Kaggle T4(16GB) 기준. OOM 시 16으로 줄임
+  num_workers: 4
+  epochs: 20
+  lr: 1.0e-4
+  weight_decay: 1.0e-5
+  focal_gamma: 0.0 # Focal Loss γ. 실험: 0/1/2/3 (최적값 0.0)
+  early_stopping_patience: 7
+  use_amp: true # Mixed Precision (torch.amp.autocast)
+  grad_clip: 1.0 # gradient clipping max_norm
+  checkpoint_dir: "checkpoints" # 모델별 서브디렉토리 루트 (checkpoints/<model>/ 에 저장)
+
+# ── 모델 ─────────────────────────────────────────────────────────────────────
+model:
+  default: "densenet" # densenet | efficientnet | vit
+  num_classes: 14
+  pretrained: true # ImageNet pretrained 가중치 사용
+
+# ── 추론 (API) ────────────────────────────────────────────────────────────────
+inference:
+  detection_threshold: 0.3
+  device: "auto" # "auto" → CUDA if available, else CPU
+
+# ── CheXpert (External Validation) ───────────────────────────────────────────
+chexpert:
+  # Stanford CheXpert-v1.0-small 기준
+  train_csv: "train.csv"
+  valid_csv: "valid.csv"
+  uncertain_strategy: "u_zeros" # u_zeros | u_ones | u_ignore
+  # 사용할 split: "valid" (5200장, 권장) | "train" (일부 샘플링)
+  eval_split: "valid"
+
+  # NIH 레이블명 ↔ CheXpert 레이블명 매핑 (7개 공통 질환)
+  label_mapping:
+    Atelectasis: "Atelectasis"
+    Cardiomegaly: "Cardiomegaly"
+    Consolidation: "Consolidation"
+    Edema: "Edema"
+    Effusion: "Pleural Effusion" # CheXpert에서 이름 다름
+    Pneumonia: "Pneumonia"
+    Pneumothorax: "Pneumothorax"

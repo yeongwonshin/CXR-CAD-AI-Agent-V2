@@ -1,0 +1,34 @@
+name: "Branch Name Check"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  branch-name-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Branch Name Convention
+        run: |
+          # The source branch from which the PR is originating
+          BRANCH_NAME="${{ github.head_ref }}"
+          echo "Checking branch name: $BRANCH_NAME"
+
+          # 정규식: (data|ai|be|fe|fix)/기능명
+          REGEX="^(data|ai|be|fe|fix)/[a-zA-Z0-9_-]+$"
+          
+          # 제외할 브랜치 (e.g. dependabot)
+          if [[ "$BRANCH_NAME" == dependabot/* ]]; then
+            echo "Dependabot branch is ignored."
+            exit 0
+          fi
+
+          if [[ ! $BRANCH_NAME =~ $REGEX ]]; then
+            echo "::error::잘못된 브랜치 이름입니다! '$BRANCH_NAME' (CONTRIBUTING.md를 확인해주세요)"
+            echo "Branch name must match the pattern: '{team}/{feature-name}'"
+            echo "Allowed teams/prefixes: data, ai, be, fe, fix"
+            echo "Example: ai/add-grad-cam, be/docker-setup"
+            exit 1
+          fi
+
+          echo "✅ Branch name follows the convention!"

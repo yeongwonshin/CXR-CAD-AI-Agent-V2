@@ -1,0 +1,96 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+pytestdebuglog.txt
+
+# Translations
+*.mo
+*.pot
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Django / Flask
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+instance/
+.webassets-cache
+
+# ── CXR-CAD: 모델 가중치 (절대 커밋 금지) ────────────────────────────────────
+# Colab에서 학습한 .pth / .pt 파일은 Git에 포함하지 않습니다.
+checkpoints/**/*.pth
+checkpoints/**/*.pt
+
+# 데이터셋 (대용량)
+data/
+*.csv
+
+# Jupyter Notebook 체크포인트
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# 아래 요약 파일들은 예외적으로 허용 (서브디렉토리 포함)
+!checkpoints/**/op_analysis.csv
+!checkpoints/**/*_subgroup.csv
+!checkpoints/**/domain_shift.csv
+!checkpoints/**/false_*.csv
+!checkpoints/**/*.png
+!checkpoints/**/test_predictions.csv
+!checkpoints/**/shortcut_regions.csv

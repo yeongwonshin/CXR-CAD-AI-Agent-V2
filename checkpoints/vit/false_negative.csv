@@ -1,0 +1,13 @@
+Case,Image Index,예측,GT,확률,Threshold,Grad-CAM,원인
+FN-1,00008383_005.png,Below threshold,Emphysema,0.0053,0.5348,확률 기반 FN 후보,"threshold 0.535보다 -0.529 낮음; View=PA, Age=44, Sex=F"
+FN-2,00012648_003.png,Below threshold,Emphysema,0.0069,0.5348,확률 기반 FN 후보,"threshold 0.535보다 -0.528 낮음; View=AP, Age=37, Sex=M"
+FN-3,00008697_004.png,Below threshold,Edema,0.0137,0.5343,확률 기반 FN 후보,"threshold 0.534보다 -0.521 낮음; View=PA, Age=48, Sex=F"
+FN-4,00012648_002.png,Below threshold,Emphysema,0.0157,0.5348,확률 기반 FN 후보,"threshold 0.535보다 -0.519 낮음; View=AP, Age=37, Sex=M"
+FN-5,00016167_005.png,Below threshold,Edema,0.017,0.5343,확률 기반 FN 후보,"threshold 0.534보다 -0.517 낮음; View=PA, Age=60, Sex=M"
+FN-6,00000212_000.png,Below threshold,Edema,0.0202,0.5343,확률 기반 FN 후보,"threshold 0.534보다 -0.514 낮음; View=PA, Age=31, Sex=M"
+FN-7,00010768_003.png,Below threshold,Emphysema,0.0271,0.5348,확률 기반 FN 후보,"threshold 0.535보다 -0.508 낮음; View=PA, Age=24, Sex=F"
+FN-8,00008468_053.png,Below threshold,Emphysema,0.0284,0.5348,확률 기반 FN 후보,"threshold 0.535보다 -0.506 낮음; View=AP, Age=11, Sex=F"
+FN-9,00002227_005.png,Below threshold,Edema,0.0293,0.5343,확률 기반 FN 후보,"threshold 0.534보다 -0.505 낮음; View=PA, Age=51, Sex=M"
+FN-10,00014346_002.png,Below threshold,Cardiomegaly,0.0111,0.5154,확률 기반 FN 후보,"threshold 0.515보다 -0.504 낮음; View=AP, Age=23, Sex=F"
+FN-11,00014046_003.png,Below threshold,Edema,0.0354,0.5343,확률 기반 FN 후보,"threshold 0.534보다 -0.499 낮음; View=PA, Age=46, Sex=M"
+FN-12,00026392_007.png,Below threshold,Emphysema,0.0389,0.5348,확률 기반 FN 후보,"threshold 0.535보다 -0.496 낮음; View=PA, Age=21, Sex=M"

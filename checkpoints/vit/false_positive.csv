@@ -1,0 +1,13 @@
+Case,Image Index,예측,GT,확률,Threshold,Grad-CAM,원인
+FP-1,00008328_003.png,Hernia,Normal/Negative,0.9993,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.933 높음; View=PA, Age=59, Sex=F"
+FP-2,00013380_002.png,Hernia,Normal/Negative,0.9989,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.933 높음; View=PA, Age=48, Sex=F"
+FP-3,00000716_000.png,Hernia,Nodule,0.9977,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.932 높음; View=PA, Age=38, Sex=F"
+FP-4,00008328_002.png,Hernia,Normal/Negative,0.995,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.929 높음; View=PA, Age=59, Sex=F"
+FP-5,00008328_001.png,Hernia,Normal/Negative,0.9947,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.929 높음; View=PA, Age=59, Sex=F"
+FP-6,00013380_001.png,Hernia,Normal/Negative,0.989,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.923 높음; View=PA, Age=47, Sex=F"
+FP-7,00011871_000.png,Hernia,Normal/Negative,0.9887,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.923 높음; View=PA, Age=64, Sex=M"
+FP-8,00019027_008.png,Hernia,Normal/Negative,0.98,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.914 높음; View=PA, Age=63, Sex=M"
+FP-9,00000931_000.png,Hernia,Normal/Negative,0.958,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.892 높음; View=PA, Age=60, Sex=F"
+FP-10,00009507_017.png,Hernia,Infiltration,0.9495,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.884 높음; View=PA, Age=60, Sex=M"
+FP-11,00002081_003.png,Hernia,Normal/Negative,0.9372,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.871 높음; View=PA, Age=48, Sex=F"
+FP-12,00019495_000.png,Hernia,Normal/Negative,0.9292,0.0659,확률 기반 FP 후보,"threshold 0.066보다 +0.863 높음; View=PA, Age=70, Sex=M"

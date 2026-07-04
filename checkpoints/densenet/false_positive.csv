@@ -1,0 +1,13 @@
+Case,Image Index,예측,GT,확률,Threshold,Grad-CAM,원인
+FP-1,00022881_007.png,Fibrosis,Normal/Negative,0.7937,0.3623,확률 기반 FP 후보,"threshold 0.362보다 +0.431 높음; View=PA, Age=63, Sex=F"
+FP-2,00018103_009.png,Effusion,Normal/Negative,0.8569,0.433,확률 기반 FP 후보,"threshold 0.433보다 +0.424 높음; View=AP, Age=19, Sex=F"
+FP-3,00010471_003.png,Fibrosis,Infiltration,0.7754,0.3623,확률 기반 FP 후보,"threshold 0.362보다 +0.413 높음; View=PA, Age=77, Sex=F"
+FP-4,00019265_005.png,Effusion,Consolidation,0.8432,0.433,확률 기반 FP 후보,"threshold 0.433보다 +0.410 높음; View=AP, Age=41, Sex=M"
+FP-5,00021565_003.png,Effusion,Atelectasis,0.8406,0.433,확률 기반 FP 후보,"threshold 0.433보다 +0.408 높음; View=AP, Age=38, Sex=M"
+FP-6,00017903_003.png,Effusion,Infiltration,0.8397,0.433,확률 기반 FP 후보,"threshold 0.433보다 +0.407 높음; View=AP, Age=24, Sex=M"
+FP-7,00028611_001.png,Effusion,Normal/Negative,0.8397,0.433,확률 기반 FP 후보,"threshold 0.433보다 +0.407 높음; View=AP, Age=62, Sex=F"
+FP-8,00016052_011.png,Edema,Normal/Negative,0.9111,0.5059,확률 기반 FP 후보,"threshold 0.506보다 +0.405 높음; View=AP, Age=58, Sex=M"
+FP-9,00027939_000.png,Fibrosis,Normal/Negative,0.7669,0.3623,확률 기반 FP 후보,"threshold 0.362보다 +0.405 높음; View=PA, Age=65, Sex=F"
+FP-10,00016011_000.png,Effusion,Atelectasis,0.8363,0.433,확률 기반 FP 후보,"threshold 0.433보다 +0.403 높음; View=AP, Age=31, Sex=F"
+FP-11,00011877_002.png,Edema,Normal/Negative,0.9087,0.5059,확률 기반 FP 후보,"threshold 0.506보다 +0.403 높음; View=AP, Age=54, Sex=F"
+FP-12,00004508_014.png,Effusion,Infiltration|Edema,0.8333,0.433,확률 기반 FP 후보,"threshold 0.433보다 +0.400 높음; View=AP, Age=37, Sex=M"

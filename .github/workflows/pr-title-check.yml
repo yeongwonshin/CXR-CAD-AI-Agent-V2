@@ -1,0 +1,36 @@
+name: "PR Title Check"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+
+jobs:
+  main:
+    name: Validate PR title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # 강제할 PR Title Prefix 목록 (CONTRIBUTING.md에 정의된 태그)
+          types: |
+            feat
+            fix
+            docs
+            style
+            refactor
+            test
+            chore
+          # 스코프(Scope)를 필수로 할지 여부
+          requireScope: false
+          # PR 제목 길이 제한
+          subjectPattern: ^(?![A-Z]).+$
+          subjectPatternError: |
+            The subject "{subject}" found in the pull request title "{title}" 
+            didn't match the configured pattern. Please ensure that the subject 
+            starts with a lowercase letter.

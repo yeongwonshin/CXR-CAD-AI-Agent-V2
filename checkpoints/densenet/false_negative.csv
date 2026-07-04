@@ -1,0 +1,13 @@
+Case,Image Index,예측,GT,확률,Threshold,Grad-CAM,원인
+FN-1,00019208_007.png,Below threshold,Edema,0.0832,0.5059,확률 기반 FN 후보,"threshold 0.506보다 -0.423 낮음; View=AP, Age=44, Sex=M"
+FN-2,00019027_000.png,Below threshold,Hernia,0.1226,0.5277,확률 기반 FN 후보,"threshold 0.528보다 -0.405 낮음; View=PA, Age=62, Sex=M"
+FN-3,00015100_006.png,Below threshold,Edema,0.116,0.5059,확률 기반 FN 후보,"threshold 0.506보다 -0.390 낮음; View=AP, Age=30, Sex=F"
+FN-4,00009822_000.png,Below threshold,Edema,0.1162,0.5059,확률 기반 FN 후보,"threshold 0.506보다 -0.390 낮음; View=AP, Age=29, Sex=M"
+FN-5,00014046_003.png,Below threshold,Edema,0.1204,0.5059,확률 기반 FN 후보,"threshold 0.506보다 -0.385 낮음; View=PA, Age=46, Sex=M"
+FN-6,00019027_004.png,Below threshold,Hernia,0.1486,0.5277,확률 기반 FN 후보,"threshold 0.528보다 -0.379 낮음; View=PA, Age=62, Sex=M"
+FN-7,00026293_002.png,Below threshold,Pneumothorax,0.1402,0.5164,확률 기반 FN 후보,"threshold 0.516보다 -0.376 낮음; View=PA, Age=47, Sex=F"
+FN-8,00000212_000.png,Below threshold,Edema,0.1308,0.5059,확률 기반 FN 후보,"threshold 0.506보다 -0.375 낮음; View=PA, Age=31, Sex=M"
+FN-9,00018705_004.png,Below threshold,Edema,0.136,0.5059,확률 기반 FN 후보,"threshold 0.506보다 -0.370 낮음; View=AP, Age=52, Sex=M"
+FN-10,00008697_004.png,Below threshold,Edema,0.1447,0.5059,확률 기반 FN 후보,"threshold 0.506보다 -0.361 낮음; View=PA, Age=48, Sex=F"
+FN-11,00018483_000.png,Below threshold,Consolidation,0.2096,0.5693,확률 기반 FN 후보,"threshold 0.569보다 -0.360 낮음; View=PA, Age=52, Sex=F"
+FN-12,00014125_027.png,Below threshold,Hernia,0.1682,0.5277,확률 기반 FN 후보,"threshold 0.528보다 -0.359 낮음; View=PA, Age=26, Sex=M"

@@ -1,0 +1,30 @@
+name: "Python Code Check (Lint)"
+
+on:
+  pull_request:
+    branches: [ "main", "dev" ]
+
+jobs:
+  lint:
+    name: Run flake8
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Linting dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+
+      - name: Run Flake8
+        run: |
+          # 127 chars wide, E501 is line length. 
+          # F401 is unused imports, E203 is whitespace before ':' (black compat)
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
