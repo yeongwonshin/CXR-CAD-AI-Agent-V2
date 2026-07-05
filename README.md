@@ -47,19 +47,25 @@ The system predicts probabilities for 14 thoracic findings and returns detected 
 
 ### 3. Model selection and checkpoint-aware inference
 
-<img src="assets/shot3.png" alt="shot1" width="500" height="300">
+<img src="assets/shot3.png" alt="shot1" width="200" height="100">
 
 Users can select the inference mode from the dashboard or API query parameter. When trained checkpoint files are present, the server loads them automatically. When no checkpoint is available, the app switches to placeholder mode so the workflow can still be demonstrated without pretending that real inference occurred.
 
 ### 4. Grad-CAM and attention review
 
+<img src="assets/shot4.png" alt="shot1" width="500" height="300">
+
 Each prediction can include a Grad-CAM-style visual context. The workflow is designed to help reviewers ask whether the model is focusing on plausible anatomy or shortcut-prone regions.
 
 ### 5. Editable AI report draft
 
+<img src="assets/shot5.png" alt="shot1" width="500" height="300">
+
 The API returns Korean and English-style report draft components, including findings, impression, review reason, and structured clinical report fields. The dashboard lets clinicians copy, edit, and submit feedback on the draft.
 
 ### 6. Agentic Case Workbench
+
+<img src="assets/shot6.png" alt="shot1" width="500" height="300">
 
 The Agent Workbench analyzes one or more uploaded cases as a batch. It combines per-image prediction, quality checks, anatomy assessment, triage assessment, DICOM context, cross-case comparison, tool trace, and follow-up Q&A.
 
@@ -67,15 +73,21 @@ See [Agentic Workflow](docs/agentic_workflow.md) for the detailed agent flow.
 
 ### 7. Reliability Readiness dashboard
 
+<img src="assets/shot7.png" alt="shot1" width="500" height="300">
+
 The reliability view consolidates calibration, operating-point quality, subgroup gaps, external validation drop, shortcut-pattern risk, and readiness status into a deployment-readiness style checklist.
 
 See [Clinical Reliability](docs/clinical_reliability.md) for the criteria and interpretation.
 
 ### 8. Clinician feedback queue
 
+<img src="assets/shot8.png" alt="shot1" width="500" height="300">
+
 Clinician agreement, disagreement, heatmap issues, label corrections, and comments can be saved into a JSONL review queue. The queue is a review artifact, not an automatic retraining trigger.
 
 ### 9. Analysis results view
+
+<img src="assets/shot9.png" alt="shot1" width="500" height="300">
 
 The analysis page turns checkpoint result files into operating-point charts, subgroup views, external validation summaries, domain-gap visualizations, error-case summaries, and optional LLM-assisted interpretation.
 
