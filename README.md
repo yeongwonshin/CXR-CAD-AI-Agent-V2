@@ -35,7 +35,8 @@ More comparison details are available in [Product Differentiation](docs/product_
 
 ### 1. Chest X-ray and DICOM upload workflow
 
-![shot1](assets/shot1.png)
+<img src="assets/shot1.png" alt="shot1" width="500" height="300">
+
 The dashboard accepts common image files and DICOM inputs. The API parses the uploaded payload, normalizes it for inference, extracts available metadata, and generates a case ID for tracking.
 
 ### 2. Multi-label thoracic finding prediction
