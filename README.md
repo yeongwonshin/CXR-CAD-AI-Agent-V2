@@ -41,9 +41,13 @@ The dashboard accepts common image files and DICOM inputs. The API parses the up
 
 ### 2. Multi-label thoracic finding prediction
 
+<img src="assets/shot2.png" alt="shot1" width="500" height="300">
+
 The system predicts probabilities for 14 thoracic findings and returns detected labels based on the selected threshold. The output includes the top finding, top probability, detected disease list, and inference status.
 
 ### 3. Model selection and checkpoint-aware inference
+
+<img src="assets/shot3.png" alt="shot1" width="500" height="300">
 
 Users can select the inference mode from the dashboard or API query parameter. When trained checkpoint files are present, the server loads them automatically. When no checkpoint is available, the app switches to placeholder mode so the workflow can still be demonstrated without pretending that real inference occurred.
 
