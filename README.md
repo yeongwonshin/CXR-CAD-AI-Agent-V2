@@ -8,6 +8,8 @@ Upload a chest X-ray image or DICOM file, review suspected findings, inspect mod
 
 [Demo Video](https://drive.google.com/file/d/1bgSycOwmrIX82I-phvk34ngxv-HMjbI0/view?usp=drive_link) · [Product Differentiation](docs/product_differentiation.md) · [Dashboard Decision Loop](docs/dashboard_decision_loop.md) · [Decision Logic](docs/decision_logic.md) · [Agentic Workflow](docs/agentic_workflow.md) · [Technical Guide](docs/technical_guide.md) · [Model Evaluation](docs/model_evaluation.md)
 
+> **This project is currently being reviewed by Yeongha Shin, a medical student at Soonchunhyang University College of Medicine, who is providing feedback on clinical context, workflow clarity, usability, and safety communication.**
+
 </div>
 
 ---
